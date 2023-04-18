@@ -186,6 +186,61 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+JAZZMIN_SETTINGS = {
+
+   # title of the window (Will default to current_admin_site.site_title if absent or None)
+    "site_title": "Rembryn Administración",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "Administración Rembryn",
+
+    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_brand": "Rembryn",
+
+    # Logo to use for your site, must be present in static files, used for brand on top left
+    "site_logo": "img/logo.png",
+
+
+    # Welcome text on the login screen
+    "welcome_sign": "Bienvenido a la administración",
+
+    # Copyright on the footer
+    "copyright": "Realizado por Jhonatan Restrepo, Mariana Munera y Henry Rodriguez",
+
+    "navigation_expanded": True,
+
+    "show_sidebar": True,
+
+    "related_modal_active": False,
+
+
+    # Hide these apps when generating side menu e.g (auth)
+
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Inicio",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Asignación Empleado",  "url": "http://127.0.0.1:8000/admin/empleados/asignacion_empleado/add/", "permissions": ["auth.view_user"]},
+        {"name": "Asignación Material",  "url": "http://127.0.0.1:8000/admin/materiales/asignacion_material/add/", "permissions": ["auth.view_user"]},
+    ],
+ 
+    "order_with_respect_to": ["proyecto","accounts","empleados","materiales"],
+
+
+}
+
+JAZZMIN_UI_TWEAKS = {
+    #"theme": "darkly",
+    #"theme": "simplex",
+    #"theme": "slate",
+    #"theme": "sketchy",
+
+ }
+
+
+
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
