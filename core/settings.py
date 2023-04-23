@@ -200,7 +200,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Rembryn",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "img/logo.png",
+    #"site_logo": "img/logo.png",
 
 
     # Welcome text on the login screen
