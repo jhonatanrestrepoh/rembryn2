@@ -253,10 +253,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 if not DEBUG:
 
-    STATIC_LOCATION = 'static'
-    PUBLIC_MEDIA_LOCATION = 'media'
+    STATIC_URL = 'static'
+    
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    MEDIA_URL = '/media/'
+    PUBLIC_MEDIA_LOCATION = 'media'
 
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
