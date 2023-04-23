@@ -57,25 +57,19 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
     'crispy_forms',
-
     'usuarios',
-
-
     'core',
     'proyecto',
     'empleados',
     'materiales',
-
     'import_export',
-
 ]
 
 
 SITE_ID = 1
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -182,8 +176,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -200,7 +192,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Rembryn",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    #"site_logo": "img/logo.png",
+    "site_logo": "img/logo.png",
 
 
     # Welcome text on the login screen
