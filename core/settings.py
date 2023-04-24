@@ -93,6 +93,7 @@ LOGIN_URL = "account_login"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,7 +128,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://rembryn_ayf0_user:OnPTNmIP3MgK8L2Da4iyoIAuj7s50VWw@dpg-cguvbb1euhlk3uug237g-a.oregon-postgres.render.com/rembryn_ayf0',        
+        default='postgres://rembryn_2oi7_user:wUEcJ9LIeQjIJI0CE4qfc1m3l3UyqE9F@dpg-ch2tidt269v61ffe0ge0-a.oregon-postgres.render.com/rembryn_2oi7',        
         conn_max_age=600   
 )}
 
@@ -223,13 +224,6 @@ JAZZMIN_SETTINGS = {
 
 }
 
-JAZZMIN_UI_TWEAKS = {
-    #"theme": "darkly",
-    #"theme": "simplex",
-    #"theme": "slate",
-    #"theme": "sketchy",
-
- }
 
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'static')
@@ -247,6 +241,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
@@ -254,3 +256,12 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+    SESSION_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_REDIRECT_EXEMPT = []
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
