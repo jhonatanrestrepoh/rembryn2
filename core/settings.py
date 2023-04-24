@@ -251,13 +251,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-if not DEBUG:
+# if not DEBUG:
 
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#     #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     
 
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
     # EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
