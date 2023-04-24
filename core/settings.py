@@ -128,10 +128,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://rembryn_2oi7_user:wUEcJ9LIeQjIJI0CE4qfc1m3l3UyqE9F@dpg-ch2tidt269v61ffe0ge0-a.oregon-postgres.render.com/rembryn_2oi7',        
+        default='postgres://rembryn_slb8_user:kviUK2ZCZaQfCKq1fbaSgoeOjCVDIhgu@dpg-ch2v39tgk4qarqj43d70-a.oregon-postgres.render.com/rembryn_slb8',        
         conn_max_age=600   
 )}
-
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
