@@ -25,7 +25,7 @@ class Empleado(models.Model):
     primer_apellido = models.CharField(max_length=100,blank=False)
     segundo_apellido = models.CharField(max_length=100,blank=True,null=True)
     edad = models.PositiveIntegerField(blank=True, null=True)
-    celular = models.IntegerField(blank=False,max_length=12)
+    celular = models.IntegerField(blank=True,max_length=10)
     email = models.EmailField(blank=True,null=True)
     foto = models.ImageField(default='users/user_default_profile.png', upload_to=user_directory_path_empleado)
 
