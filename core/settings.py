@@ -53,17 +53,19 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'django.contrib.humanize',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
     'usuarios',
     'core',
+    'import_export',
+
+    'cotizaciones',
     'proyecto',
     'empleados',
     'materiales',
-    'import_export',
+
 ]
 
 
