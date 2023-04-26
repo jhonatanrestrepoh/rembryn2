@@ -19,23 +19,13 @@ def user_directory_path_empleado(instance, filename):
 
 
 class Empleado(models.Model):
-    identificacion = models.IntegerField(blank=False,
-        default=1,
-        validators=[
-            MaxValueValidator(999999999999),
-            MinValueValidator(100_000)
-        ])
+    identificacion = models.IntegerField(blank=False,max_length=10)
     primer_nombre = models.CharField(max_length=100, blank=False)
     segundo_nombre = models.CharField(max_length=100,blank=True,null=True)
     primer_apellido = models.CharField(max_length=100,blank=False)
     segundo_apellido = models.CharField(max_length=100,blank=True,null=True)
     edad = models.PositiveIntegerField(blank=True, null=True)
-    celular = models.IntegerField(blank=False,
-        default=1,
-        validators=[
-            MaxValueValidator(3999999999),
-            MinValueValidator(300_000_0000)
-        ])
+    celular = models.IntegerField(blank=False,max_length=12)
     email = models.EmailField(blank=True,null=True)
     foto = models.ImageField(default='users/user_default_profile.png', upload_to=user_directory_path_empleado)
 
