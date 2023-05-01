@@ -259,6 +259,13 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+    EMAIL_BACKEND=os.environ.get("EMAIL_BACKEND")
+    EMAIL_HOST =os.environ.get('EMAIL_HOST')
+    EMAIL_HOST_USER =os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD =os.environ.get('EMAIL_HOST_PASSWORD')
+    EMAIL_PORT =os.environ.get('EMAIL_PORT')
+    EMAIL_USE_TLS =os.environ.get('EMAIL_USE_TLS')
+
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
