@@ -1,19 +1,21 @@
 from django.contrib import admin
-from .models import Material, Asignacion_Material
+from .models import *
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-# Register your models here.
-
-class MaterialResource(resources.ModelResource):
+class MaterialsResource(resources.ModelResource):
     class Meta:
         model = Material
 
-class materialAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+class MaterialAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['nombre']
-    resource_class = MaterialResource
+    resource_class = MaterialsResource
 
-admin.site.register(Material, materialAdmin)
-admin.site.register(Asignacion_Material)
+admin.site.register(Material,MaterialAdmin)
 
-#constraseña es rodriguez22
+# Register your models here.
+
+
+
+
+

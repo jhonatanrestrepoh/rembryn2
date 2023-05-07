@@ -61,10 +61,13 @@ INSTALLED_APPS = [
     'core',
     'import_export',
 
-    'cotizaciones',
-    'proyecto',
     'empleados',
+    'proyectos',
     'materiales',
+    'cotizacion',
+    
+    
+    
 
 ]
 
@@ -130,7 +133,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://rembryn_slb8_user:kviUK2ZCZaQfCKq1fbaSgoeOjCVDIhgu@dpg-ch2v39tgk4qarqj43d70-a.oregon-postgres.render.com/rembryn_slb8',        
+        default='postgres://rembryn_xobw_user:vGEHIGD3IF6kJL0hySI6Z6y0iXf6yE3l@dpg-chbf5re7avjcvo5r7680-a.oregon-postgres.render.com/rembryn_xobw',        
         conn_max_age=600   
 )}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -216,9 +219,7 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [
 
         # Url that gets reversed (Permissions can be added)
-        {"name": "Inicio",  "url": "admin:index", "permissions": ["auth.view_user"]},
-        {"name": "Asignación Empleado",  "url": "http://127.0.0.1:8000/admin/empleados/asignacion_empleado/add/", "permissions": ["auth.view_user"]},
-        {"name": "Asignación Material",  "url": "http://127.0.0.1:8000/admin/materiales/asignacion_material/add/", "permissions": ["auth.view_user"]},
+        {"name": "Inicio",  "url": "admin:index", "permissions": ["auth.view_user"]}
     ],
  
     "order_with_respect_to": ["proyecto","accounts","empleados","materiales"],
@@ -240,6 +241,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 
 STATIC_URL = '/static/'

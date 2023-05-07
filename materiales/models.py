@@ -1,27 +1,17 @@
 from django.db import models
-from proyecto.models import Proyecto
 
 # Create your models here.
 
 class Material(models.Model):
+    id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    descripcion = models.CharField(max_length=500, blank=True, null=True)
-    precio = models.PositiveIntegerField(blank=True, null=True)
-
+    valor = models.PositiveIntegerField(default=0)
+    fecha_actualizacion=models.DateField(auto_now_add=False)
+    fecha_registro =models.DateField(auto_now_add=True)
+    
     def __str__(self):
         return self.nombre
-
+    
     class Meta:
         verbose_name = "Material"
         verbose_name_plural = "Materiales"
-
-class Asignacion_Material(models.Model):
-    material = models.ManyToManyField('Material', related_name="material")
-    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE, related_name="proyecto+")
-
-    def __str__(self):
-        return str(self.proyecto)
-
-    class Meta:
-        verbose_name = "Asignacion_Material"
-        verbose_name_plural = "Asignacion_Materiales"
