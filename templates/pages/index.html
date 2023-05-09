@@ -7,16 +7,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rembryn</title>
+   
 </head>
 <body>
     <!-- NAVBAR -->
-{% block navbar %}
-{% include 'components/navbar.html' %}
-{% endblock navbar %}
-    {% if user.is_authenticated %}
-        hola
-    {% endif %}
+    <!-- {% block navbar %}
+    {% include 'components/navbar.html' %}
+    {% endblock navbar %} -->
+       
+    {% block content %}
+            <div class="px-4 py-5 px-md-5 bg-secondary" >
+                <div class="jumbotron text-white">
+                    <h1>Bienvenid@ {{user.username}}</h1>
+                    <p>Estas dentro de Rembryn, aca puedes observar tus proyectos.</p>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a class="btn btn-default" href="{% url 'account_change_password' %}">Cambiar contraseña</a>
+                        <a class="btn btn-default" href="{% url 'account_logout' %}">Salir</a>
+                      </div>
+                  </div>
+            </div>
+    {% endblock content %}
+    
 
    
 </body>

@@ -64,10 +64,7 @@ INSTALLED_APPS = [
     'empleados',
     'proyectos',
     'materiales',
-    'cotizacion',
-    
-    
-    
+    'cotizacion', 
 
 ]
 
@@ -241,9 +238,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
-
 
 STATIC_URL = '/static/'
 
