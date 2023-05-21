@@ -6,10 +6,17 @@ from import_export.admin import ImportExportModelAdmin
 class UsersResource(resources.ModelResource):
     class Meta:
         model = User
+        ordering = ['username','password']
 
 class UsersAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['username']
     resource_class = UsersResource
+
+
+
+
+
+
 
 admin.site.register(User,UsersAdmin)
 admin.site.register(Cliente)
