@@ -3,11 +3,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import HomeView
+from smart_selects import urls as smart_selects_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+
+    path('chaining/', include('smart_selects.urls')),
 
     path('', HomeView.as_view(), name="home"),
 

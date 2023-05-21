@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'core',
     'import_export',
 
+    'smart_selects',
+
     'empleados',
     'proyectos',
     'materiales',

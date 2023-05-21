@@ -22,7 +22,7 @@ class Proyecto(models.Model):
     fecha_fin =models.DateField(auto_now_add=False)
     fecha_registro =models.DateField(auto_now_add=True)
     cliente_id =models.ForeignKey(User, on_delete=models.CASCADE, related_name="cliente")
-    accepted = models.CharField(blank=False, null=False, default='Pendiente',max_length=100, choices=ESTADOS)
+    estados = models.CharField(blank=False, null=False, default='Pendiente',max_length=100, choices=ESTADOS)
 
     def __str__(self):
         return self.nombre
