@@ -43,6 +43,8 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 INSTALLED_APPS = [
     'jazzmin',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,7 +64,7 @@ INSTALLED_APPS = [
     'import_export',
 
     'smart_selects',
-
+    
     'empleados',
     'proyectos',
     'materiales',
@@ -132,7 +134,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://rembryn_xobw_user:vGEHIGD3IF6kJL0hySI6Z6y0iXf6yE3l@dpg-chbf5re7avjcvo5r7680-a.oregon-postgres.render.com/rembryn_xobw',        
+        default='postgres://rembryn_5801_user:WNTFoCNCY3mwskcO73Yt1iKJxm7qGmC2@dpg-chlr2ve4dadfmsi66afg-a.oregon-postgres.render.com/rembryn_5801',        
         conn_max_age=600   
 )}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -249,6 +251,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory

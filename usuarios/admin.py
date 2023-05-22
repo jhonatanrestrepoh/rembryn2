@@ -11,6 +11,7 @@ class UsersResource(resources.ModelResource):
 class UsersAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['username']
     resource_class = UsersResource
+    fields = ('first_name','last_name','username','email','password','is_superuser','is_staff','groups','user_permissions','is_active')
 
 
 

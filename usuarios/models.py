@@ -9,6 +9,7 @@ from smart_selects.db_fields import ChainedForeignKey
 
 
 
+
 # Create your models here.
 
 class User(AbstractUser):
@@ -118,5 +119,3 @@ class Direccion(models.Model):
     class Meta:
         verbose_name = "Direccion"
         verbose_name_plural = "Direcciones"
-
-

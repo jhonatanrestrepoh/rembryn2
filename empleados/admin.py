@@ -18,7 +18,6 @@ admin.site.register(Tipos_empleado, Tipos_empleadoAdmin)
 class EmpleadosResource(resources.ModelResource):
     class Meta:
         model = Empleado
-        
 
 class EmpleadoAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['primer_nombre']

@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('chaining/', include('smart_selects.urls')),
 
+    
     path('', HomeView.as_view(), name="home"),
 
 
